@@ -1,0 +1,27 @@
+.inforDetail{
+    margin: 20px;
+    margin-bottom: 33px;
+    height: 33px;
+    margin-top: 0px;
+}
+.detail{
+    position: relative;
+    left: 630px;
+    top: 10px;
+}
+.delBtn{
+    position: absolute;
+    background-color: rgb(77, 172, 203);
+    color: white;
+    font-size: 18px;
+    border-radius: 6px; 
+    border: 1.5px solid black;
+    width: 80px;
+    height: 40px;
+    left: 480px;
+    top: 200px;
+}
+.delBtn:hover{
+    background-color: white;
+    color: rgb(77, 172, 203);
+}

@@ -1,0 +1,58 @@
+.contentfilm{
+    border-bottom: 2px solid black;
+    position: relative;
+    left: 400px;
+}
+h2{
+    display: inline;
+}
+.exit{
+    position: absolute;
+    font-size: 40px;
+    left: 1020px;
+    bottom: -10px;
+}
+
+
+.infor{
+    position: relative;
+    left: 400px;
+    top: 20px;
+}
+.filmPoster{
+    width: 230px;
+    height: 340px;
+    position: absolute;
+}
+.filmInfor{
+    position: absolute;
+    left: 230px;
+}
+.dropdown-divider
+{
+    width: 490px;
+}
+.ticket{
+    position: absolute;
+    background-color: rgb(77, 172, 203);
+    color: white;
+    font-size: 20px;
+    border-radius: 6px;
+    border: 1.5px solid black;
+    width: 150px;
+    height: 50px;
+    left: 30px;
+    bottom: -60px;
+}
+.ticket:hover{
+    background-color: white;
+    color: rgb(77, 172, 203);
+}
+
+
+.content{
+    position: relative;
+    left: 400px;
+    top: 400px;
+}
+

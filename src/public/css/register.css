@@ -1,0 +1,31 @@
+label {
+    font-weight: 600;
+}
+
+form {
+    border-radius: 6px;
+}
+
+button {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    left: 510px;
+}
+
+.genderOption{
+    position: relative;
+    width: 250px;
+    height: 36px;
+    border-radius: 5px;
+    border: 0.000001px solid black;
+    margin-left: 30px;
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
+
+#mess{
+    text-align: center;
+    color: red;
+    font-size: 20px;
+}

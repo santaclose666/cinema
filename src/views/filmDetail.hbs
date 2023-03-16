@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Phim</title>
+    <link rel="stylesheet" href="public/css/filmDetail.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{>shortcutIcon}}
+</head>
+<body>
+    {{>nav}}
+    
+    <div class="contentfilm col-6">
+        <h2 class="col-4">Nội Dung Phim</h2>
+        <button onclick="homePage()"><i class="bi bi-x-circle exit col-1"></i></button>
+    </div>
+    
+    {{#each film}}
+    <div class="infor col-6">
+        <img class="filmPoster" src="{{smallposter}}" alt="">
+        <ul class="filmInfor">
+            <h3>{{filmname}}</h>
+            <hr class="dropdown-divider">
+            <h5>Đạo diễn: {{director}}</h5>
+            <h5>Diễn viên: {{actor}}</h5>
+            <h5>Thể loại: {{category}}</h5>
+            <h5>Khởi chiếu: {{opendate}}</h5>
+            <h5>Thời lượng: {{times}}</h5>
+            <h5 class="rated">Rated: Yêu cầu khán giả trên {{rated}} tuổi</h5>
+            <h5>Trạng thái: {{status}}</h5>
+            <button class="ticket">
+                <i class="bi bi-ticket-detailed"></i>
+                <span><b>Mua vé</b></span>
+            </button>
+        </ul>
+    </div>
+    <div class="content col-6">
+        <span style="font-size: 17px;">{{content}}</span>
+    </div>
+    {{/each}}
+</body>
+<script> 
+    function homePage(){
+        window.location.replace('/')
+    }
+</script>
+</html>

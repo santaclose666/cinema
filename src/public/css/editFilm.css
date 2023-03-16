@@ -1,0 +1,48 @@
+.inforDetail{
+    margin-top: 36px;
+    margin-bottom: 30px;
+}
+.selectFilm{
+    margin-bottom: 20px;
+}
+.detail{
+    position: relative;
+    left: 630px;
+    top: 10px;
+}
+label{
+    font-weight: bold;
+    font-size: 18px;
+}
+.inputDetail{
+    position: absolute;
+    left: 165px;
+    width: 280px;
+    border: 1px solid rgb(153, 153, 153);
+}
+.editBtn{
+    position: absolute;
+    background-color: rgb(77, 172, 203);
+    color: white;
+    font-size: 18px;
+    border-radius: 6px; 
+    border: 1.5px solid black;
+    width: 80px;
+    height: 40px;
+    left: 490px;
+    bottom: -60px;
+}
+.editBtn:hover{
+    background-color: white;
+    color: rgb(77, 172, 203);
+}
+
+.dropdown-divider
+{
+    width: 555px;
+}
+
+.name{
+    font-size: 25px;
+    margin-left: 115px;
+}

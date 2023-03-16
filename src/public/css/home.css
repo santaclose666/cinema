@@ -1,0 +1,112 @@
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+.filmImg {
+    height: 560px;
+    width: 1000px;
+    border-radius: 20px;
+    border: 5px solid;
+}
+.slideshow-container{
+    width: 1000px;
+    position: relative;
+    margin: auto;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(96, 59, 245);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: lightblue;
+  opacity: .3;
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    position: relative;
+    bottom: 25px;
+}
+.active, .dot:hover {
+    background-color: #3302c5;
+}
+.mySlides {
+    animation-name: mySlides;
+    animation-duration: 1s;
+}
+@keyframes mySlides {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+.filmClick{
+    width: 400px;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.filmbtn{
+    border-bottom: 2px solid rgb(17, 112, 144);
+    background-color: white;
+    font-size: 18px;
+}
+#coming{
+    margin-left: 30px;
+}
+.filmbtn:hover{
+    border-bottom: 1px solid rgb(11, 109, 141);
+}
+
+.col-4{
+    margin-bottom: 45px;
+}
+li{
+    display: inline;
+}
+.filmItem{
+    height: 255px;
+    width: 475px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.filmItem:hover{
+    opacity: 0.5;
+    border: 4px solid black;
+}
+.title{
+    margin-left: 8px;
+}
+.ticket{
+    position: relative;
+    background-color: rgb(77, 172, 203);
+    color: white;
+    font-size: 20px;
+    border-radius: 6px;
+    border: 1.5px solid black;
+    width: 150px;
+    height: 50px;
+    left: 175px;
+}
+.ticket:hover{
+    background-color: white;
+    color: rgb(77, 172, 203);
+}

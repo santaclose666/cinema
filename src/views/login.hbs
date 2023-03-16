@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="public/css/login.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    {{>shortcutIcon}}
+</head>
+<body>
+    <div id="wrapper">
+        <form class="loginForm" action="">
+            <div class="form"><b>Login Form</b></div>
+            <div class="input">
+                <label for="">User Name:</label>
+                <input id="email" type="text">
+            </div>
+            <div class="input">
+                <label for="">Password:</label>
+                <input id="password" type="password">
+            </div>
+            <div id="mess"></div>
+            <button onclick="login()">Login</button>
+            <div onclick="register()" class="registerBtn">Đăng Kí Tài Khoản</div>
+        </form>
+    </div>
+</body>
+<script>
+    function login(){
+        event.preventDefault()
+        let email = document.getElementById('email').value
+        let password = document.getElementById('password').value
+
+        fetch('/login', {
+            method: 'POST',
+            body: new URLSearchParams(
+                {email: email, password: password}
+            )
+        })
+        .then(res => res.json())
+        .then((res) =>{
+        if(res.status === 200){
+            window.location.replace('/')
+        }
+        else{
+            let mess = document.getElementById('mess').innerText = 'Incorrect email or passowrd!'
+        }
+    })
+    }
+    function register(){
+        window.location.replace('/register')
+    }
+</script>
+</html>

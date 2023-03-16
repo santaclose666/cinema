@@ -1,0 +1,13 @@
+.lastLine{
+    background-color: rgb(101, 207, 243);
+    height: 70px;
+    margin-top: 60px;
+    position: relative;
+}
+.lastText{
+    position: absolute;
+    top: 25%;
+    right: 45%;
+    text-decoration: underline;
+    cursor: pointer;
+}

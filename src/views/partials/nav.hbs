@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/nav.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul class="navItem">
+            <button class="homeBtn">
+                <a href="http://localhost:3000/">
+                    <img class="img" src="/public/img/touchIcon.png" alt="">
+                    <img class="img2" src="/public/img/TouchCinema.png" alt="">
+                </a>
+            </button>
+        </ul>
+        
+        <ul>
+            <input id="search" class="searchInput" type="text" placeholder=" Search..">
+            <button onclick="searchbtn()" class="searchbtn">
+                <i class="fa fa-search"
+                    style="font-size: 30px;">
+                </i>
+            </button>
+        </ul>
+
+        {{#if name}}
+            <ul class="dropdown">
+                <button class="userBtn" data-bs-toggle="dropdown"><h1 id="searchIcon" class="bi bi-person-circle"></h1><div class="username">{{name}}</di></button>
+                <ul id="drop-menu" class="dropdown-menu">
+                    <li><button onclick="accountDetail()" class="dropdown-item"><b>Thông tin tài khoản</b></button></li>
+                    <li><button class="dropdown-item"><b>Lịch sử thanh toán</b></button></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><button onclick="logout()" class="dropdown-item"><b>Đăng xuất</b></button></li>
+                </ul>
+            </ul>
+        {{else}}
+            <ul class="loginout">
+                <span class="inout" onclick="login()">Đăng Nhập</span>
+                <span class="gach"> / </span>
+                <span class="inout" onclick="register()">Đăng Kí</span>
+            </ul>
+        {{/if}}
+    </div>
+</body>
+<script>
+    function searchbtn(){
+        let input = document.getElementById('search').value
+        window.location.replace('/search/' + input)
+    }
+    function login()
+    {
+        window.location.replace('http://localhost:3000/login')
+    }
+    function logout()
+    {
+        window.location.replace('http://localhost:3000/logout')
+    } 
+    function register()
+    {
+        window.location.replace('http://localhost:3000/register')
+    }
+    function accountDetail()
+    {
+        window.location.replace('http://localhost:3000/accountDetail')
+    }
+    
+</script>
+</html>
+
+
+

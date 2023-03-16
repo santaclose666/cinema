@@ -1,0 +1,49 @@
+#email{
+    border: none;
+}
+
+#mess{
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}
+
+.inforDetail{
+    margin: 20px;
+    margin-bottom: 33px;
+}
+.detail{
+    position: relative;
+    left: 610px;
+    top: 10px;
+}
+label{
+    font-weight: bold;
+    font-size: 18px;
+}
+.inputDetail{
+    position: absolute;
+    left: 140px;
+    width: 300px;
+    border: 1px solid rgb(153, 153, 153);
+}
+#gender{
+    position: absolute;
+    width: 150px;
+}
+.saveBtn{
+    position: absolute;
+    background-color: rgb(77, 172, 203);
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+    border: 1.5px solid black;
+    width: 55px;
+    height: 35px;
+    left: 530px;
+    top: 250px;
+}
+.saveBtn:hover{
+    background-color: white;
+    color: rgb(77, 172, 203);
+}

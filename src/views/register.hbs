@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Kí</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/register.css">
+    {{>shortcutIcon}}
+</head>
+<body style="background-color: rgb(83, 212, 255);">
+    <form style="background-color: white;" class="col-5 container py-3 my-4 border mt-5" action="">
+        <h3 class="container" style="text-align: center; text-decoration: underline; color: rgb(0, 0, 0);">Register  Form</h3>
+        <div class="form-group px-3">
+            <label class="form-label" for="">User Name:</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                    <input id="username" class="form-control" placeholder="Enter your user name" type="text">
+                </div>
+        </div>
+        <div class="form-group px-3 my-4">
+            <label class="form-label" for="">Address:</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-house"></i></span>
+                <input id="address" class="form-control" type="text" placeholder="Enter your address">
+            </div>
+        </div>
+        <div class="form-group px-3 my-4">
+            <label class="form-label" for="">Phone Number:</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                <input id="phone" class="form-control" type="text" placeholder="Enter your number">
+            </div>
+        </div>
+        <div class="form-group px-3 my-4">
+            <label class="form-label" for="">Email:</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input id="email" class="form-control" type="email" placeholder="Enter your email">
+            </div>
+        </div>
+        <div class="form-group px-3 my-4">
+            <label class="form-label" for="">Password:</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+                <input id="password" class="form-control" type="password" placeholder="Enter your password">
+            </div>
+        </div>
+        <div id="mess"></div>
+        <div class="end">
+            <button onclick="register()" class="btn btn-outline-primary">Register</button>
+        </div>
+        
+    </form>
+</body>
+<script>
+    function register()
+    {
+        event.preventDefault()
+        let username = document.getElementById('username').value
+        let address = document.getElementById('address').value
+        let phone = document.getElementById('phone').value
+        let email = document.getElementById('email').value
+        let password = document.getElementById('password').value
+        
+        let mess = document.getElementById('mess')
+
+        if(!email.includes('@'))
+        {
+            mess.innerText = 'Email invalid'
+        }
+        else if(password.length < 8)
+        {
+            mess.innerText = 'Password invalid'
+        }
+        else if(email.length == 0 || password.length == 0 || username.length == 0 || address.length == 0 || phone.length == 0)
+        {
+            mess.innerText = 'Missing value!'
+        }
+        else
+        {
+            fetch('/register',{
+                method: 'POST',
+                body: new URLSearchParams(
+                    {username: username, address: address, phone: phone, email: email, password: password}
+                )
+            })
+            .then(res => res.json())
+            .then((res) =>{
+                if(res.status === 200){
+                    window.location.replace('/login')
+                }
+                else{
+                    mess.innerText = 'Email already exist'
+                }
+            })
+        }
+    }
+</script>

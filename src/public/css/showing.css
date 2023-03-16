@@ -1,0 +1,49 @@
+.col-4{
+    margin-bottom: 45px;
+}
+li{
+    display: inline;
+}
+.filmItem{
+    height: 255px;
+    width: 475px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.filmItem:hover{
+    opacity: 0.5;
+    border: 4px solid black;
+}
+.title{
+    margin-left: 8px;
+}
+.ticket{
+    position: relative;
+    background-color: rgb(77, 172, 203);
+    color: white;
+    font-size: 20px;
+    border-radius: 6px;
+    border: 1.5px solid black;
+    width: 150px;
+    height: 50px;
+    left: 175px;
+}
+.ticket:hover{
+    background-color: white;
+    color: rgb(77, 172, 203);
+}
+
+h2{
+    text-decoration: underline;
+    position: relative;
+    left: 40px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+#mess{
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 700px;
+    color: red;
+}

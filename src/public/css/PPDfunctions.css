@@ -1,0 +1,86 @@
+.yourAccount{
+    position: relative;
+    left: 300px;
+    top: 0px;
+    margin-top: 10px;
+}
+.span1{
+    color: rgb(23, 193, 250);
+    font-size: 25px;
+    position: relative;
+    left: 20px;
+}
+.span2{
+    background-color: rgb(23, 193, 250);
+    color: #ffffff;
+    position: absolute;
+    font-size: 25px;
+    left: 300px;
+    width: 600px;
+    text-align: center;
+}
+
+
+.yourBtn{
+    position: relative;
+    left: 290px;
+    top: 15px;
+    font-size: 18px;
+}
+.btn1{
+    background-color: rgb(200, 200, 200);
+    width: 290px;
+    height: 40px;
+    font-weight: bold;
+    position: absolute;
+
+}
+.btn2{
+    background-color: rgb(200, 200, 200);
+    width: 290px;
+    height: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 45px;
+}
+.dropdownItem{
+    display: block;
+    width: 290px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid white;
+}
+.dropdownItem:hover{
+    background-color: rgb(225, 225, 225);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #8e8e8e;
+    width: 290px;
+    height: 40px;
+    top: 86px;
+    right: 76px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    display: block;
+  }
+
+.dropbtn{
+    background-color: rgb(200, 200, 200);
+    width: 290px;
+    height: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 45px;
+    right: 76px;
+}
+.dropdown-content a:hover {background-color: rgb(255, 255, 255);}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn .btn1 {background-color: #509fff;}
+

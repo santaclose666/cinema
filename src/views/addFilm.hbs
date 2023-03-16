@@ -1,0 +1,139 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Khoản</title>
+    <link rel="stylesheet" href="/public/css/addFilm.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    {{>nav}}
+
+    {{>PPDfunctions}}
+
+    <div class="detail col-6">
+        <div class="inforDetail col-6">
+            <label for="">ID</label>
+            <input id="idfilm" class="inputDetail col-6" type="text">
+        </div>
+        <div class="inforDetail col-6">
+            <label for="">Tên Phim</label>
+            <input id="filmname" class="inputDetail col-6" type="text">
+        </div>      
+        <div class="inforDetail col-6">
+            <label for="">Thời Lượng</label>
+            <select class="inputDetail" name="" id="times">
+                <option value="2 Hours">2 Tiếng</option>
+                <option value="3 Hours">3 Tiếng</option>
+                <option value="4 Hours">4 Tiếng</option>
+            </select>
+        </div>
+        <div class="inforDetail col-6">
+            <label for="">Đạo Diễn</label>
+            <input id="director" class="inputDetail col-6" type="text">
+        </div>
+        <div class="inforDetail col-6">
+            <label for="">Diễn Viên</label>
+            <input id="dv" class="inputDetail col-6" type="text">
+        </div>
+        <div class="inforDetail col-6">
+            <label for="">Thể Loại</label>
+            <select class="inputDetail" name="" id="category">
+                <option value="Hài Kịch">Hài Kịch</option>
+                <option value="Hành Động">Hành Động</option>
+                <option value="Viễn Tưởng">Viễn Tưởng</option>
+                <option value="Tình Cảm">Tình Cảm</option>
+                <option value="Kinh Dị">Kinh Dị</option>
+                <option value="Tài Liệu">Tài Liệu</option>
+            </select>
+        </div>      
+        <div class="inforDetail col-6">
+            <label for="">Trailer URL</label>
+            <input id="trailer" class="inputDetail col-6" type="text">
+        </div>
+        <div class="inforDetail col-6">
+            <label for="">Rated</label>
+            <select class="inputDetail" name="" id="rated">
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+        <div class="inforDetail col-6">
+            <label for="">Nội Dung</label>
+            <input id="content" class="inputDetail col-6" type="text">
+        </div>
+        <div class="inforDetail col-6">
+            <label for="">Ngày Khởi Chiếu</label>
+            <input id="opendate" class="inputDetail col-6" type="date">
+        </div>
+        <div class="inforDetail col-6">
+            <label for="">Ngày Kết Thúc</label>
+            <input id="enddate" class="inputDetail col-6" type="date">
+        </div>      
+        <div class="inforDetail col-6">
+            <label for="">Poster URL</label>
+            <input id="filmposter" class="inputDetail col-6" type="text" placeholder="">
+        </div>
+        <div class="inforDetail col-6">
+            <label for="">Small Poster URL</label>
+            <input id="smallposter" class="inputDetail col-6" type="text">
+        </div>
+        <div class="inforDetail col-6">
+            <label for="">Trạng Thái</label>
+            <select class="inputDetail" name="" id="statuss">
+                <option value="Đang Chiếu">Đang Chiếu</option>
+                <option value="Sắp Chiếu">Sắp Chiếu</option>
+            </select>
+        </div>
+        <div>
+            <button onclick="add()" class="addBtn">Add</button>
+        </div>
+        <div id="mess"></div>
+    </div>
+</body>
+<script>
+    function add(){
+        event.preventDefault()
+        let idfilm = document.getElementById('idfilm').value
+        let filmname = document.getElementById('filmname').value
+        let times = document.getElementById('times').value
+        let director = document.getElementById('director').value
+        let dv = document.getElementById('dv').value
+        let category = document.getElementById('category').value
+        let trailer = document.getElementById('trailer').value
+        let rated = document.getElementById('rated').value
+        let content = document.getElementById('content').value
+        let opendate = document.getElementById('opendate').value
+        let enddate = document.getElementById('enddate').value
+        let filmposter = document.getElementById('filmposter').value
+        let smallposter = document.getElementById('smallposter').value
+        let statuss = document.getElementById('statuss').value
+
+        fetch('/addFilm', {
+            method: 'POST',
+            body: new URLSearchParams(
+                {
+                    idfilm: idfilm, filmname: filmname, times: times, director: director,
+                    dv: dv, category: category, trailer: trailer,
+                    rated: rated, content: content, opendate: opendate, enddate: enddate,
+                    filmposter: filmposter, smallposter: smallposter, statuss: statuss
+                }
+            )
+        })
+        .then(res => res.json())
+        .then((res) =>{
+            if(res.status === 200)
+            {
+                window.location.replace('/addFilm')
+            }
+        })
+    }
+</script>
+</html>
